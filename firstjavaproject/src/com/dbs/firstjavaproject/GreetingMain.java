@@ -1,9 +1,9 @@
 package com.dbs.firstjavaproject;
 
-public class Welcome {
+public class GreetingMain {
 
     public static void main(String[] args) {
-
-        System.out.println(10%3);
+        Greeting gr = new Greeting();
+        gr.greet();
     }
 }

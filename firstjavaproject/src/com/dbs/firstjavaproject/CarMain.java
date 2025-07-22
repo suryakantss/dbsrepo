@@ -1,9 +1,11 @@
 package com.dbs.firstjavaproject;
 
-public class Welcome {
+public class CarMain {
 
     public static void main(String[] args) {
 
-        System.out.println(10%3);
+        Car c = new Car();
+        c.drive();
+        c.stop();
     }
 }
