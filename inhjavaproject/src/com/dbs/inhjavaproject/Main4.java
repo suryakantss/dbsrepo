@@ -15,6 +15,7 @@ class CreditCard extends  Payment {
 
 
 
+
 public class Main4 {
 
     public static void main(String[] args) {
@@ -25,6 +26,12 @@ public class Main4 {
         CreditCard cc = new CreditCard();
         cc.amount=10000;
         cc.ccno="CVFGRT";
+
+        //set the ref of superclass and create the instance of subclass
+        //Payment p;
+        //p = new Gpay();
+        //p = new CreditCard();
+
 
        }
 }
