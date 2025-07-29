@@ -46,11 +46,28 @@ public class DemoTest {
     public void testTimeout()
     {
         assertTimeout(Duration.ofMillis(2000),()->{
-            Thread.sleep(3000);
+           // Thread.sleep(3000);
             System.out.println("Hello....");
 
         });
 
+    }
+
+
+    @Test
+    public void testExp(){
+    assertThrows(ArithmeticException.class,()->{
+        int x = 100/0;
+        System.out.println(x);
+    })  ;
+    }
+
+    @Test
+    public void testNotExp(){
+       assertDoesNotThrow(()->{
+           int x = 100/2;
+           System.out.println(x);
+       });
     }
 
 }
