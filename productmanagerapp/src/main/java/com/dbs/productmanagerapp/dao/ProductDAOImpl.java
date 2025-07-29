@@ -17,4 +17,12 @@ public class ProductDAOImpl implements ProductDAO {
     String query = "select * from products";
     return  jdbctemplate.query(query,new BeanPropertyRowMapper<>(Product.class));
     }
+
+    @Override
+    public int save(Product product) {
+        String query = "insert into products values(?,?,?)";
+        Object[] params = {product.getId(),product.getName(),product.getPrice()};
+        return  jdbctemplate.update(query,params);
+
+    }
 }
