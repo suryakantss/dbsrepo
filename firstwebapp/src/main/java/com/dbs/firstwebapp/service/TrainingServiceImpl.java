@@ -1,47 +1,45 @@
 package com.dbs.firstwebapp.service;
 
+import com.dbs.firstwebapp.dao.CourseDAO;
 import com.dbs.firstwebapp.model.Course;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class TrainingServiceImpl implements TrainingService {
-private List<Course> courses = new ArrayList<>();
+    @Autowired
+    private CourseDAO courseDAO;
 
-TrainingServiceImpl(){
-   courses.add(new Course("C1","Java","5 days"));
-   courses.add(new Course("C2","Spring Boot","3 days"));
-}
     @Override
     public List<Course> getCourses() {
-    return  courses;
+    return  courseDAO.findAll();
     }
 
     @Override
     public Course getCourse(String id) {
-    return  courses.stream().filter(c->c.getId().equals(id)).findFirst().get();
+    return  courseDAO.findById(id).get();
     }
 
     @Override
     public Course addCourse(Course c) {
-        if(courses.add(c))
-            return c;
-        else
-            return null;
+      return courseDAO.save(c);
     }
 
     @Override
     public Course delCourse(String id) {
-      Course c = getCourse(id);
-        for (Course course : courses) {
-            if(course.equals(c)){
-                courses.remove(c);
-                return c;
-            }
-        }
-        return  null;
+        Course c = courseDAO.findById(id).get();
+        courseDAO.delete(c);
+        return  c;
+    }
+
+    @Override
+    public Course updateCourse(String id, Course course) {
+       Course c = courseDAO.findById(id).get();
+       c.setName(course.getName());
+        c.setDuration(course.getDuration());
+        return courseDAO.save(c);
     }
 }
 

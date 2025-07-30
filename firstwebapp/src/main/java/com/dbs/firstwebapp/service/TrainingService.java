@@ -9,4 +9,5 @@ public interface TrainingService {
     public Course getCourse(String id);
     public Course addCourse(Course c);
     public Course delCourse(String id);
+    public Course updateCourse(String id,Course course);
 }

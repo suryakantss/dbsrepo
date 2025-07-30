@@ -35,4 +35,8 @@ public class TrainingController {
         return  ResponseEntity.status(HttpStatus.OK).body(trainingService.delCourse(id));
 
     }
+    @PutMapping("/courses/{id}")
+    public ResponseEntity<Course> updatecourse(@PathVariable String id, @RequestBody  Course course){
+        return  ResponseEntity.status(HttpStatus.CREATED).body(trainingService.updateCourse(id,course));
+    }
 }

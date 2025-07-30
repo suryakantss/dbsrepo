@@ -1,25 +1,22 @@
-package com.dbs.firstwebapp.model;
-
+package com.dbs.jpaapp.model;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.util.Objects;
 
 @Entity
-@Table(name = "courses")
-public class Course {
+@Table(name = "employees")
+public class Employee {
     @Id
     private String id;
     private String name;
-    private String duration;
-Course(){
+    public Employee() {
 
-}
-
-    public Course(String id, String name, String duration) {
+    }
+    public Employee(String id, String name) {
         this.id = id;
         this.name = name;
-        this.duration = duration;
     }
 
     public String getId() {
@@ -38,19 +35,11 @@ Course(){
         this.name = name;
     }
 
-    public String getDuration() {
-        return duration;
-    }
-
-    public void setDuration(String duration) {
-        this.duration = duration;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        Course course = (Course) o;
-        return Objects.equals(id, course.id);
+        Employee employee = (Employee) o;
+        return Objects.equals(id, employee.id);
     }
 
     @Override
@@ -60,10 +49,9 @@ Course(){
 
     @Override
     public String toString() {
-        return "Course{" +
+        return "Employee{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", duration='" + duration + '\'' +
                 '}';
     }
 }
