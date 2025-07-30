@@ -27,8 +27,8 @@ public class JpaappApplication {
 			Employee e = employeeDAO.findByName("Jerry");
 			System.out.println(e);
 		};*/
-			Employee e = new Employee("E4", "Hardy");
-			employeeDAO.save(e);
+		//	Employee e = new Employee("E4", "Hardy");
+		//	employeeDAO.save(e);
 		};
 	}
 }
