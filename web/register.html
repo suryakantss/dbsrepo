@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+       <link href="./styles/style.css" rel="stylesheet">
+
+</head>
+<body>
+      
+    <div>
+        <img src="images/logo.png" width="100px">
+    </div>
+    <div>
+     <a href="home.html">Home</a>
+     <a href="products.html">Products</a>
+     <a href="contact.html">Contact</a>
+     <a href="register.html">Register</a>
+     
+    </div>
+    <div>
+   <form action="senddata.html" method="post">
+     <h3>Register</h3>
+     <div>
+        <label>Full Name </label>
+        <input type="text" name="fname">
+     </div>
+     <div>
+        <label>Email </label>
+        <input type="text" name="email">
+     </div>
+     <div>
+        <label>Address</label>
+        <textarea name="address" rows="5" cols="20"></textarea>
+     </div>
+     <div>
+        <label>Subscribe for news letter (monthly) </label>
+        <input type="radio" name="subs" checked>Yes <input type="radio" name="subs">No 
+      </div>
+
+      <div>
+        <label>Profile</label>
+        <input type="checkbox">Working
+        <input type="checkbox">Student
+      </div>
+      <div>
+        <label>City</label>
+        <select name="city">
+           <option>Pune</option>
+           <option>Mumbai</option>
+        </select>
+      </div>
+
+      <div>
+        <button>Next</button>
+      </div>
+</form>
+    </div>
+</body>
+</html>
