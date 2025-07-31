@@ -1,0 +1,10 @@
+* {
+    margin: 4px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+
+}
+
+.err {
+color: red;
+}
