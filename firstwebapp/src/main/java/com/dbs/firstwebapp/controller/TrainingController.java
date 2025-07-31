@@ -2,6 +2,8 @@ package com.dbs.firstwebapp.controller;
 
 import com.dbs.firstwebapp.model.Course;
 import com.dbs.firstwebapp.service.TrainingService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -13,10 +15,13 @@ import java.util.List;
 
 @RestController
 public class TrainingController {
+    Logger logger = LoggerFactory.getLogger(getClass());
+
     @Autowired
     private TrainingService trainingService;
     @GetMapping("/courses")
     public ResponseEntity<List<Course>> getcourses(){
+    logger.info("getting courses");
         return  ResponseEntity.status(HttpStatus.OK).body(trainingService.getCourses());
 
     }

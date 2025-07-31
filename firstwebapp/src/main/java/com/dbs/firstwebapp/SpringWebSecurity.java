@@ -19,6 +19,7 @@ public class SpringWebSecurity {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+
         http.authorizeHttpRequests(auth -> auth.requestMatchers("/courses").hasRole("DEVELOPER"))
        .authorizeHttpRequests(auth->auth.requestMatchers("/users").permitAll()).httpBasic(Customizer.withDefaults());
         return http.build();

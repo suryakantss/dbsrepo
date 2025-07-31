@@ -1,10 +1,10 @@
-package com.dbc.firstwebapp;
+package com.dbs.adminserver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class FirstwebappApplicationTests {
+class AdminserverApplicationTests {
 
 	@Test
 	void contextLoads() {
