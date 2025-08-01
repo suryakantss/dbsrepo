@@ -1,13 +1,14 @@
 import { useRef, useState } from "react";
+import { CourseService } from "../services/courseservice";
 export function Courses() {
     let cref = useRef();
 
-    let [tlist,setTlist] = useState(['Java', 'SpringBoot']);
+    let [tlist,setTlist] = useState(CourseService.search());
     
     function addCourse() {
-       setTlist([...tlist,cref.current.value]);
+       CourseService.add(cref.current.value);
+       setTlist(CourseService.search());
        cref.current.value='';
-
     }
 
     return (
