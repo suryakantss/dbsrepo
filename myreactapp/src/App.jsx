@@ -1,4 +1,5 @@
 import './App.css'
+import { Courses } from './components/courses'
 import { Home } from './components/home'
 import { Login } from './components/login'
 
@@ -8,6 +9,8 @@ function App() {
     <Home></Home>
     <hr />
     <Login></Login>
+    <hr />
+    <Courses></Courses>
     </>
   )
 }

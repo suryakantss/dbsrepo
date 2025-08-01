@@ -1,7 +1,8 @@
 export function Home(){
+  let msg='Home';
     return (
         <>
-        <h3>Home</h3>
+        <h3>{msg}</h3>
         </>
     )
 }
