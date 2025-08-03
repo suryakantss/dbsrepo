@@ -1,0 +1,1 @@
+import{u as r,b as n,j as s,L as i}from"./index-C0SKKxCu.js";function c(){let a=r(),t=n();function e(){t("/products")}return s.jsxs(s.Fragment,{children:[s.jsxs("h3",{children:["Details :  ",a.id]}),s.jsx("button",{onClick:e,children:"Close"}),s.jsxs("p",{children:[s.jsx(i,{to:t("/products"),children:"back"})," "]})]})}export{c as default};
