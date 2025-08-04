@@ -1,10 +1,25 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CourseService } from "../services/courseservice";
 export function Courses() {
     let cref = useRef();
 
-    let [tlist,setTlist] = useState(CourseService.search());
+    let [tlist,setTlist] = useState([]);
     
+    useEffect(()=>{
+            console.log('Courses Mounted....');
+            setTlist(CourseService.search());
+    },[]);
+
+    useEffect(()=>{
+        console.log('Course updated...')
+    },[tlist]);
+
+    useEffect(()=>{
+            return ()=>{
+                console.log('Courses Unmounted....')
+            }
+    },[]);
+
     function addCourse() {
        CourseService.add(cref.current.value);
        setTlist(CourseService.search());

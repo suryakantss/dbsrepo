@@ -9,6 +9,7 @@ import com.dover.restpro.domain.Product;
 
 @Repository
 public interface ProductDAO  extends CrudRepository<Product, String>{
+
 	public List<Product> findAll();
 	
 

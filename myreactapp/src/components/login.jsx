@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import './login.css';
 import { LoginService } from '../services/loginservice';
-export function Login() {
+export default function Login() {
 
     let [msg, setMsg] = useState('');
     let lref = useRef();

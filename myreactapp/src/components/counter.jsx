@@ -7,6 +7,20 @@ export class Counter extends Component {
     dec = () => {
         this.setState({count: this.state.count + 1});
     }
+
+    componentDidMount(){
+        console.log('Counter Mounted...')
+    }
+    componentDidUpdate(pprops,pstate){
+        console.log('Counter Updated...' + JSON.stringify(pstate));
+    }
+
+    shouldComponentUpdate(){
+        return true;
+    }
+    componentWillUnmount(){
+        console.log('Counter Unmounted....')
+    }
     render() {
         return (
             <div>

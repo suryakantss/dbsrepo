@@ -20,7 +20,7 @@ import com.dover.restpro.service.ProductService;
 
 @RestController
 
-@CrossOrigin(origins = {"http://localhost:5173","http://localhost"})
+@CrossOrigin(origins = {"http://localhost:5173"})
 public class ProductsController {
 	@Autowired
 	private ProductService productService;

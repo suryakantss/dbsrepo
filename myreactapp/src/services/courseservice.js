@@ -1,4 +1,4 @@
-let courses = [];
+let courses = ['Java'];
 
 function search(){
     return courses;
