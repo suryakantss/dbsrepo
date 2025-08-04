@@ -1,5 +1,5 @@
 import { Component } from "react";
-export class Counter extends Component {
+export default class Counter extends Component {
     state = { count: 10 };
     inc = () => {
         this.setState({count: this.state.count + 1});

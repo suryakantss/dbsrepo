@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { CourseService } from "../services/courseservice";
-export function Courses() {
+export default function Courses() {
     let cref = useRef();
 
     let [tlist,setTlist] = useState([]);
