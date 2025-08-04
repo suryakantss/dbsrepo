@@ -12,7 +12,8 @@ function App() {
   let Courses = lazy(() => import('./components/courses'));
   let Register = lazy(() => import('./components/register'));
   let Parent = lazy(() => import('./components/parent/parent'));
-  
+  let Users = lazy(() => import('./components/users'));
+
   return (
     <>
       <div>
@@ -21,8 +22,7 @@ function App() {
         <Link to='courses'>Course</Link>
         <Link to='counter'>Counter</Link>
         <Link to='parent'>Parent</Link>
-        
-
+        <Link to='users'>Users</Link>
       </div>
       <div>
         <Suspense fallback={<div>wait loading....</div>}>
@@ -32,8 +32,8 @@ function App() {
             <Route path='courses' element={<Courses></Courses>}></Route>
             <Route path='counter' element={<Counter></Counter>}></Route>
             <Route path='register' element={<Register></Register>}></Route>
-           <Route path='parent' element={<Parent></Parent>}></Route>
-
+            <Route path='parent' element={<Parent></Parent>}></Route>
+            <Route path='users' element={<Users></Users>}></Route>
           </Routes>
         </Suspense>
       </div>
