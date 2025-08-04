@@ -11,6 +11,8 @@ function App() {
   let Login = lazy(() => import('./components/login'));
   let Courses = lazy(() => import('./components/courses'));
   let Register = lazy(() => import('./components/register'));
+  let Parent = lazy(() => import('./components/parent/parent'));
+  
   return (
     <>
       <div>
@@ -18,7 +20,8 @@ function App() {
         <Link to='login'>Login</Link>
         <Link to='courses'>Course</Link>
         <Link to='counter'>Counter</Link>
-        <Link to='register'>Register</Link>
+        <Link to='parent'>Parent</Link>
+        
 
       </div>
       <div>
@@ -29,6 +32,7 @@ function App() {
             <Route path='courses' element={<Courses></Courses>}></Route>
             <Route path='counter' element={<Counter></Counter>}></Route>
             <Route path='register' element={<Register></Register>}></Route>
+           <Route path='parent' element={<Parent></Parent>}></Route>
 
           </Routes>
         </Suspense>
