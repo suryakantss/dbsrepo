@@ -18,7 +18,7 @@ export function Details() {
     return (
         <div>
             <h4>Details : {params.id}</h4>
-            <hr></hr>
+            
             <h3>Id: {product.id}</h3>
             <h3>Name: {product.name}</h3>
             <h3>Price: {product.price}</h3>

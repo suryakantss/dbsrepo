@@ -8,6 +8,10 @@ function getProductsById(id){
     return Axios.get(url+"/"+id);
 }
 
+function addProduct(product){
+    return Axios.post(url,product);
+}
 
-export const ProductService = {getProducts,getProductsById};
+
+export const ProductService = {getProducts,getProductsById,addProduct};
 
