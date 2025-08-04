@@ -1,6 +1,6 @@
-import Axios from "axios";
 import { useEffect, useState } from "react";
 import './users.css';
+import { UsersService } from "../services/usersservice";
 
 export default function Users() {
     let [users, setUsers] = useState([]);
@@ -10,12 +10,12 @@ export default function Users() {
     }, []);
 
     function getData() {
-        let url = 'https://jsonplaceholder.typicode.com/users';
-        Axios.get(url).then(res => {
-            setUsers(res.data);
-        }).catch(err => {
+       UsersService.getUsers().then(u=>{
+        setUsers(u.data);
+       }).catch(err=>{
             console.log(err);
-        });
+       });
+       
     }
 
     return (
