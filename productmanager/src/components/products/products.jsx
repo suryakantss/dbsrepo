@@ -19,6 +19,14 @@ export function Products() {
             console.log(err);
         });
     }
+     function delProduct(id){
+            ProductService.delProduct(id).then(res=>{
+                alert(res.data.id + " deleted...");
+                getData();
+            }).catch(err=>{
+                console.log(err);
+            });
+        }
     function addProduct(){
         let nproduct = {id:idref.current.value,name:nameref.current.value,price:priceref.current.value};
         ProductService.addProduct(nproduct).then(res=>{
@@ -30,6 +38,8 @@ export function Products() {
         }).catch(err=>{
 
         });
+
+       
 
     }
     return (
@@ -44,7 +54,7 @@ export function Products() {
                     </tr>
                 </thead>
                 <tbody>
-                    {products.map(p => <tr key={p.id}><td><Link to={`details/${p.id}`}>{p.id}</Link></td><td>{p.name}</td><td>{p.price}</td></tr>)}
+                    {products.map(p => <tr key={p.id}><td><Link to={`details/${p.id}`}>{p.id}</Link><button onClick={()=>delProduct(p.id)}>X</button></td><td>{p.name}</td><td>{p.price}</td></tr>)}
                     <tr><th><input ref={idref}></input></th><th><input ref={nameref}></input></th><th><input ref={priceref}></input></th></tr>
                     <tr><th colSpan="3"><button onClick={addProduct}>Add</button></th></tr>
                 </tbody>
