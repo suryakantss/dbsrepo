@@ -1,0 +1,8 @@
+docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=doverdb -d --network=mynet -v ./mydb:/var/lib/mysql  mysql
+
+docker run -p 8080:8080 --name restpro -d --network mynet -e spring_datasource_url=jdbc:mysql://mysql/doverdb suryakants/restpro
+
+
+
+
+
